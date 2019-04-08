@@ -23,6 +23,17 @@ namespace CSVReader
 
         private string m_fileText = "";
 
+        private bool m_fileLoaded;
+        public bool FileLoaded
+        {
+            get => m_fileLoaded;
+            set
+            {
+                m_fileLoaded = value;
+                OnPropertyChanged("FileLoaded");
+            }
+        }
+
         public DataTable OutputDataTable
         {
             get; set;
@@ -64,6 +75,11 @@ namespace CSVReader
             return ChildRows[row].GetCellValue(column);
         }
 
+        public void SetCellValue(int column, int row, string newValue)
+        {
+            ChildRows[row].SetCellValue(column, newValue);
+        }
+
         private void loadFromFile(string path)
         {
             FilePath = path;
@@ -91,6 +107,9 @@ namespace CSVReader
                     ChildRows.Add(toAdd);
                 }
 
+                //The file was loaded and parsed successfully!
+                FileLoaded = true;
+
                 //Create a new DataTable based on this new file
                 fillDataTable();
             }
@@ -98,14 +117,14 @@ namespace CSVReader
 
         private void fillDataTable()
         {
-            //Create a column for each header we found in the first row
+            //Create a column for each header we find in the first row
             foreach (var header in ChildRows[0].CellValues)
             {
                 OutputDataTable.Columns.Add(header, typeof(string));
             }
 
             //Parse the rest of the rows
-            var theRestOfTheRows = ChildRows;
+            List<CSVRowViewModel> theRestOfTheRows = new List<CSVRowViewModel>(ChildRows);
             theRestOfTheRows.RemoveAt(0);
             foreach (var row in theRestOfTheRows)
             {
@@ -118,6 +137,29 @@ namespace CSVReader
             }
 
             //OutputDataTable and OutputDataView are now filled and ready to be accessed
+        }
+
+        public void WriteToCSVFile(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+
+                //Create the new csv file
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    string fullText = this.ToString();
+                    sw.Write(fullText);
+                    sw.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
         public override string ToString()
@@ -179,6 +221,11 @@ namespace CSVReader
             return CellValues[index];
         }
 
+        public void SetCellValue(int index, string newValue)
+        {
+            CellValues[index] = newValue;
+        }
+
         private void resizeRow(int newLength)
         {
             if (CellValues.Capacity < newLength)
@@ -208,9 +255,13 @@ namespace CSVReader
         public override string ToString()
         {
             string ret = "";
-            foreach (var val in CellValues)
+            for (int i = 0; i < CellValues.Capacity; i++)
             {
-                ret += val + ",";
+                ret += CellValues[i];
+                if (i != CellValues.Capacity - 1)
+                {
+                    ret += ",";
+                }
             }
             return ret;
         }

@@ -42,11 +42,7 @@ namespace CSVReader
             }
         }
 
-        public CSVReaderWindow()
-        {
-            InitializeComponent();
-            DataContext = MainViewModel;
-        }
+        #region Event Handlers
 
         private void FilePathBrowseButton_Click(object sender, RoutedEventArgs e)
         {
@@ -56,13 +52,51 @@ namespace CSVReader
                 //Initialize the ViewModel
                 MainViewModel = new CSVSheetViewModel(dialog.FileName);
                 _this.DataContext = MainViewModel;
-                PopulateDataGrid();
+
+                //Populate the DataGrid
+                MainDataGrid.ItemsSource = MainViewModel.OutputDataView;
             }
         }
 
-        private void PopulateDataGrid()
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            MainDataGrid.ItemsSource = MainViewModel.OutputDataView;
+            //Write to the CSV file when the user clicks "Save"
+            MainViewModel.WriteToCSVFile(MainViewModel.FilePath);
+        }
+
+        private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                //Pull the row and column from the DataGrid
+
+                var column = e.Column as DataGridBoundColumn;
+                if (column != null)
+                {
+                    var bindingPath = (column.Binding as Binding).Path.Path;
+
+                    int columnIndex = MainViewModel.ChildRows[0].CellValues.FindIndex(s => s == bindingPath);
+                    int rowIndex = e.Row.GetIndex() + 1;
+                    var el = e.EditingElement as TextBox;
+                    string newVal = el.Text;
+
+                    //Set the value of the cell at that row and column
+                    MainViewModel.SetCellValue(columnIndex, rowIndex, el.Text);
+
+                    //MessageBox.Show("Col: " + columnIndex + " Row: " + rowIndex + " New Val: " + newVal);
+                }
+            }
+        }
+
+        #endregion
+
+        public CSVReaderWindow()
+        {
+            InitializeComponent();
+            DataContext = MainViewModel;
+
+            //Hook up cell editing event handler
+            MainDataGrid.CellEditEnding += DataGrid_CellEditEnding;
         }
     }
 }
