@@ -1,0 +1,81 @@
+﻿<Window x:Class="SimpleApp.SimpleAppWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleApp"
+        mc:Ignorable="d"
+        Name="_thisWindow"
+        Title="Simple App"
+        Height="250" Width="500"
+        MinHeight="200" MinWidth="250">
+    <Window.Resources>
+
+        <!--Style to apply to the parent Grid panel-->
+        <Style x:Key="ParentGridStyle"
+               TargetType="{x:Type Grid}">
+            <Setter Property="Background" Value="LightSkyBlue"/>
+            <Setter Property="Margin" Value="5,5,5,5"/>
+        </Style>
+
+        <!--Style to apply to a Label control-->
+        <Style x:Key="HeaderLabelStyle"
+               TargetType="{x:Type Label}">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+    </Window.Resources>
+    
+    <Grid Style="{StaticResource ParentGridStyle}">
+        
+        <!--Define 3 rows and 2 columns for our parent Grid. Each row and column's size is divided evenly-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Display the window's Width-->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0" Grid.Column="0">
+            <Label Content="Window Width: "
+                   Style="{StaticResource HeaderLabelStyle}"/>
+            <Label Content="{Binding ElementName=_thisWindow, Path=Width}"
+                   Style="{StaticResource HeaderLabelStyle}"/>
+        </StackPanel>
+        
+        <!--Display the window's Height-->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="0" Grid.Column="1">
+            <Label Content="Window Height: "
+                   Style="{StaticResource HeaderLabelStyle}"/>
+            <Label Content="{Binding ElementName=_thisWindow, Path=Height}"
+                   Style="{StaticResource HeaderLabelStyle}"/>
+        </StackPanel>
+        
+        <!--Display a Slider control that the user can drag-->
+        <Slider Name="CoolSlider"
+                Maximum="100" 
+                TickFrequency="5"
+                TickPlacement="BottomRight"
+                VerticalAlignment="Center"
+                Grid.Row="1" Grid.Column="0"/>
+        
+        <!--Display a Progress Bar control-->
+        <ProgressBar Minimum="0" Maximum="100"
+                     Value="{Binding ElementName=CoolSlider, Path=Value}"
+                     Height="25"
+                     Grid.Row="1" Grid.Column="1"/>
+        
+        <!--Add more stuff here-->
+        
+        
+        
+    </Grid>
+</Window>

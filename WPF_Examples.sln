@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Examples", "WPF_Examples\WPF_Examples.csproj", "{A403A88E-3373-450E-A290-58C84A8C77EF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVReader", "CSVReader\CSVReader.csproj", "{CDB2B2CE-3AAA-46B4-A61D-C61B3C3372D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PingerApp", "PingIndicator\PingerApp.csproj", "{F678F7A4-B1D4-4B03-846A-947FDD20A308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleApp", "SimpleApp\SimpleApp.csproj", "{B00EF582-A30A-473A-9B45-245DCCCD12A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A403A88E-3373-450E-A290-58C84A8C77EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A403A88E-3373-450E-A290-58C84A8C77EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A403A88E-3373-450E-A290-58C84A8C77EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A403A88E-3373-450E-A290-58C84A8C77EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDB2B2CE-3AAA-46B4-A61D-C61B3C3372D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDB2B2CE-3AAA-46B4-A61D-C61B3C3372D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB2B2CE-3AAA-46B4-A61D-C61B3C3372D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{F678F7A4-B1D4-4B03-846A-947FDD20A308}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F678F7A4-B1D4-4B03-846A-947FDD20A308}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F678F7A4-B1D4-4B03-846A-947FDD20A308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00EF582-A30A-473A-9B45-245DCCCD12A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00EF582-A30A-473A-9B45-245DCCCD12A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00EF582-A30A-473A-9B45-245DCCCD12A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00EF582-A30A-473A-9B45-245DCCCD12A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
