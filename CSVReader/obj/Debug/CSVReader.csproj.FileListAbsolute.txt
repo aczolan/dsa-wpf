@@ -1,0 +1,14 @@
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.csprojResolveAssemblyReference.cache
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\App.g.cs
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader_MarkupCompile.cache
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader_MarkupCompile.lref
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\bin\Debug\CSVReader.exe.config
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\bin\Debug\CSVReader.exe
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\bin\Debug\CSVReader.pdb
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.g.resources
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.Properties.Resources.resources
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.csproj.GenerateResource.Cache
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.exe
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReader.pdb
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReaderWindow.g.cs
+C:\Projects\dsa-wpf\WPF_Examples\CSVReader\obj\Debug\CSVReaderWindow.baml

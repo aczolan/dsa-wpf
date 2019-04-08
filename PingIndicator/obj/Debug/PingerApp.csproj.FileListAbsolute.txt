@@ -1,0 +1,14 @@
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingerAppWindow.g.cs
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\App.g.cs
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator_MarkupCompile.cache
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator_MarkupCompile.lref
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator.exe
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator.pdb
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\bin\Debug\PingIndicator.exe.config
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\bin\Debug\PingIndicator.exe
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\bin\Debug\PingIndicator.pdb
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingerAppWindow.baml
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator.g.resources
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingIndicator.Properties.Resources.resources
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingerApp.csproj.GenerateResource.Cache
+C:\Projects\dsa-wpf\WPF_Examples\PingIndicator\obj\Debug\PingerApp.csprojResolveAssemblyReference.cache
